@@ -14,7 +14,7 @@ DATASHEET: http://www.electronicoscaldas.com/datasheet/GNS-5611-Series_G-NOR.pdf
 
 #include "Arduino.h"
 
-class segment {
+class AS5611 {
 private:
     int ports[8];
 public:

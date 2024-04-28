@@ -1,6 +1,6 @@
 #include "AS5611.h"
 
-segment display;
+AS5611 display;
 
 void setup() {
   int ports[8] = {2, 3, 4, 5, 6, 7, 8, 9};

@@ -10,13 +10,13 @@ DATASHEET: http://www.electronicoscaldas.com/datasheet/GNS-5611-Series_G-NOR.pdf
 
 #include "AS5611.h"
 
-void segment::init(int* setup) {
+void AS5611::init(int* setup) {
     for (int i = 0; i < 8; i++) {
         ports[i] = setup[i];
     }
 }
 
-void segment::clearAll() {
+void AS5611::clearAll() {
     for (int i = 0; i < 8; i++) {
         pinMode(ports[i], OUTPUT);
         digitalWrite(ports[i], LOW);
@@ -25,7 +25,7 @@ void segment::clearAll() {
     turnOffDot();
 }
 
-void segment::setNum(int num) {
+void AS5611::setNum(int num) {
     int patterns[10][8] = {
         {1,1,1,1,1,1,0,0},
         {0,1,1,0,0,0,0,0},
@@ -51,12 +51,12 @@ void segment::setNum(int num) {
 }
 
 
-void segment::turnOnDot() {
+void AS5611::turnOnDot() {
     pinMode(ports[7], OUTPUT);
     digitalWrite(ports[7], HIGH);
 }
 
-void segment::turnOffDot() {
+void AS5611::turnOffDot() {
     pinMode(ports[7], OUTPUT);
     digitalWrite(ports[7], LOW);
 }
